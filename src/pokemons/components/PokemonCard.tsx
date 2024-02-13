@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { SimplePokemon } from '..';
 import Image from 'next/image';
 import { IoHeartOutline } from 'react-icons/io5';
+import { SimplePokemon } from '../interfaces/simple-pokemon';
 
 interface Props {
     pokemon: SimplePokemon;
@@ -26,13 +26,12 @@ export const PokemonCard = ({ pokemon }: Props) => {
                     />
 
                     <p className="pt-2 text-lg font-semibold text-gray-50 capitalize">{ name }</p>
-                    <p className="text-sm text-gray-100">John@Doe.com</p>
                     <div className="mt-5">
                         <Link
                             className="border rounded-full py-2 px-4 text-xs font-semibold text-gray-100"
-                            href={`dashboard/pokemon/${id}`}
+                            href={`/dashboard/pokemon/${id}`}
                         >
-                            Saber más
+                            Más información
                         </Link>
                     </div>
                     </div>
