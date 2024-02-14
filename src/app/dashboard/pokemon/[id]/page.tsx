@@ -8,13 +8,20 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
-    const { id, name } = await getPokemon(params.id);
-
-    return {
-        title: `#${id} - ${name}`,
-        description: `Página del pokemón: ${name}`
+    try {
+        const { id, name } = await getPokemon(params.id);
+    
+        return {
+            title: `#${id} - ${name}`,
+            description: `Página del pokemón: ${name}`
+        }
+    } catch (error) {
+        return {
+            title: 'Página del pokemón',
+            description: 'Cualquier cosa'
+        }
     }
-
+    
 }
 
 const getPokemon = async(id: string): Promise<Pokemon> => {
