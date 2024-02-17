@@ -1,6 +1,11 @@
 import React from 'react';
 import { SimpleWidget } from '@/components';
 
+export const metadata = {
+    title: 'Admin Dashboard',
+    description: 'Descripción de página'
+}
+
 export default function MainPage() {
     return (
         <div className='text-black p-2'>
